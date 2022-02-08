@@ -1,0 +1,178 @@
+.add-new-emission {
+    width: 700px;
+    height: 500px;
+    background-color: #516373;
+    position: absolute;
+    transform: translate(30vw, 20vh);
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+  }
+  
+  .emission-container {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .emission-forms-flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .emission-welcome-text {
+    margin: 150px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .emission-by-countries {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-top: 1px solid white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .form-container {
+    padding: 10px;
+    height: 380px;
+    width: 400px;
+    max-width: 400px;
+    max-height: 380px;
+    background-color: #98d3aa;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .all-the-forms {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 160px;
+  }
+  
+  .emission-form-container .form-input {
+    margin-bottom: 10px;
+  }
+  
+  .flight-search {
+    margin: 5px !important;
+  }
+  
+  .airplane {
+    opacity: 50%;
+    width: 420px;
+    height: 160px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transform: translateY(-10px);
+    background-image: url("../images/airplane.jpeg");
+    transition: 0.2s;
+    border-bottom: 5px solid #b9e344;
+  }
+  
+  .road {
+    opacity: 50%;
+    width: 420px;
+    height: 160px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transform: translateY(-10px);
+    background-image: url("../images/road.jpeg");
+    transition: 0.2s;
+    border-bottom: 5px solid #b9e344;
+  }
+  
+  .shipping {
+    opacity: 50%;
+    width: 420px;
+    height: 160px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transform: translateY(-10px);
+    background-image: url("../images/shipping.jpeg");
+    transition: 0.2s;
+    border-bottom: 5px solid #b9e344;
+  }
+  
+  .electricity {
+    opacity: 50%;
+    width: 420px;
+    height: 160px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transform: translateY(-10px);
+    background-image: url("../images/electricity.png");
+    transition: 0.2s;
+    border-bottom: 5px solid #b9e344;
+  }
+  
+  .form-container:hover .road,
+  .form-container:hover .electricity,
+  .form-container:hover .shipping,
+  .form-container:hover .airplane {
+    opacity: 100%;
+    transition: 0.2s;
+  }
+  
+  .form-container h2 {
+    transform: translateY(-120px);
+    color: white;
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .emission-popup {
+    background-color: #4e944a;
+    width: 500px;
+    height: 280px;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    border: 5px solid #b9e344;
+  }
+  
+  .emission-popup h2 {
+    margin-bottom: 10px;
+  }
+  
+  .emission-popup h4 {
+    margin: 5px;
+  }
+  
+  .emission-popup button {
+    margin: 5px;
+    margin-top: 20px;
+  }
+  
+  .popup-container {
+    position: absolute;
+    left: 50%;
+  }
+  
+  .popup-position {
+    position: relative;
+    left: -50%;
+    margin-top: 50%;
+    z-index: 2;
+  }
+  

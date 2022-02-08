@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&family=Reenie+Beanie&family=Yuji+Boku&display=swap");
+
+.navbar-container {
+  margin: 0%;
+  width: 95%;
+  height: 100px;
+  position: fixed;
+  background-color: #4e944a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  z-index: 10;
+}
+
+.user-info-container button {
+  margin: 10px;
+}
+
+.user-info-container button:hover {
+  opacity: 50%;
+}
+
+.user-info-container {
+  display: flex;
+  align-items: center;
+}
+
+#name-of-app {
+  font-family: "Reenie Beanie", cursive;
+  font-size: 4rem;
+  transform: translateX(-20px);
+}
+
+.nav-buttons > ul {
+  width: 600px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-info-container ul {
+  width: 500px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-info-container img:hover {
+  opacity: 60%;
+}
+
+.username-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.nav-buttons > ul > li {
+  font-size: 1.7rem;
+}
+
+.nav-buttons > ul > li:hover {
+  opacity: 50%;
+}
+
+.user-info-container img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  padding-right: 50px;
+}
+
+form > input {
+  margin: 5px;
+}

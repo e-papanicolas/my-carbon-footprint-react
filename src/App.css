@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Reenie+Beanie&family=Yuji+Boku&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+.App {
+  text-align: center;
+}
+
+.background {
+  background-image: url("./images/background.png");
+  left: 0;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
+  position: fixed;
+  transform: translateY(50px);
+}
+
+.App-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: #049dd9;
+}
+
+.homepage-container {
+  padding: 120px;
+  padding-bottom: 90px;
+}
+
+.carbon-estimate-btn {
+  margin-top: 10px;
+}
+
+.map-and-charts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.footer-container small {
+  color: white;
+}
