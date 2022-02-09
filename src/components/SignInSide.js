@@ -52,7 +52,6 @@ export default function SignInSide({ onSignin, setSignUp }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(signInData)
         fetch("https://enigmatic-reef-41104.herokuapp.com/signin", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -71,7 +70,7 @@ export default function SignInSide({ onSignin, setSignUp }) {
         })
     }
 
-    console.log(error)
+
 
   return (
     <ThemeProvider theme={theme}>

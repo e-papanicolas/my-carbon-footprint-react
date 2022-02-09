@@ -57,7 +57,6 @@ export default function SignUp({ setCurrentUser }) {
 
   function handleSubmit(e) {
       e.preventDefault();
-      console.log(signUpData);
 
       fetch("https://enigmatic-reef-41104.herokuapp.com/users", {
         method: "POST",
