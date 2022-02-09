@@ -21,13 +21,13 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="#">
+      <Link color="inherit" href="https://elenipapanicolas.com">
          Eleni Papanicolas 
       </Link>{', '}
       <Link color="inherit" href="http://katherineroll.com">
         Katherine Roll
       </Link>{', '}
-      <Link color="inherit" href="#">
+      <Link color="inherit" href="https://hung-le-swe.netlify.app">
         Hung Le
       </Link>{' '}
       {new Date().getFullYear()}
@@ -59,16 +59,16 @@ export default function SignUp({ setCurrentUser }) {
       e.preventDefault();
       console.log(signUpData);
 
-      fetch("/users", {
+      fetch("https://enigmatic-reef-41104.herokuapp.com/users", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(signUpData)
       })
       .then((resp) => resp.json())
-      .then(user => setCurrentUser(user))
-      .then(navigate("/"))
-
-
+      .then(user => {
+        setCurrentUser(user)
+        navigate("/")
+      })
   }
 
   return (

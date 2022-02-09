@@ -19,13 +19,13 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="#">
+      <Link color="inherit" href="https://elenipapanicolas.com">
          Eleni Papanicolas 
       </Link>{', '}
-      <Link color="inherit" href="http://katherineroll.com">
+      <Link color="inherit" href="https://katherineroll.com">
         Katherine Roll
       </Link>{', '}
-      <Link color="inherit" href="#">
+      <Link color="inherit" href="https://hung-le-swe.netlify.app">
         Hung Le
       </Link>{' '}
       {new Date().getFullYear()}
@@ -53,20 +53,25 @@ export default function SignInSide({ onSignin, setSignUp }) {
     function handleSubmit(e) {
         e.preventDefault();
         console.log(signInData)
-        fetch("/signin", {
+        fetch("https://enigmatic-reef-41104.herokuapp.com/signin", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(signInData)
         })
         .then(resp => {
             if(resp.ok){
-                resp.json().then(user => onSignin(user))
+                resp.json().then(data => {
+                  onSignin(data.user);
+                  localStorage.setItem("userId", data.session);
+                })
             }
             else {
                 resp.json().then(error => setError(error))
             }
         })
     }
+
+    console.log(error)
 
   return (
     <ThemeProvider theme={theme}>

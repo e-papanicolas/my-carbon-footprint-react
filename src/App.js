@@ -26,17 +26,22 @@ function App() {
   }
 
   function handleLogOut() {
-    fetch("/signout", {
+    fetch("https://enigmatic-reef-41104.herokuapp.com/signout", {
       method: "DELETE",
     }).then(() => {
       navigate("/")
       setLoggedIn(false)
+      localStorage.clear();
     });
   }
 
 
   useEffect(() => {
-    fetch("/me").then((response) => {
+    fetch("https://enigmatic-reef-41104.herokuapp.com/me", {
+      headers: {
+        user_id: localStorage.getItem("userId"),
+      },
+    }).then((response) => {
       if (response.ok) {
         response.json().then((user) => {
           setCurrentUser(user);
@@ -52,13 +57,13 @@ function App() {
         response.json().then((error) => console.log(error))
       }
     });
-  }, [loggedIn]);
+  }, []);
 
 
 
 
   function handleDeleteData(location, item) {
-    fetch(`/${location}/${item.id}`, {
+    fetch(`https://enigmatic-reef-41104.herokuapp.com/${location}/${item.id}`, {
       method: "DELETE",
     });
 
@@ -88,7 +93,7 @@ function App() {
   }
 
   function handleShippingSaveData(shipment) {
-    fetch(`/shipping_histories`, {
+    fetch(`https://enigmatic-reef-41104.herokuapp.com/shipping_histories`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -105,7 +110,7 @@ function App() {
   }
 
   function handleFlightSaveData(flight) {
-    fetch(`/flight_histories`, {
+    fetch(`https://enigmatic-reef-41104.herokuapp.com/flight_histories`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -122,7 +127,7 @@ function App() {
   }
 
   function handleVehicleSaveData(vehicle) {
-    fetch(`/vehicle_histories`, {
+    fetch(`https://enigmatic-reef-41104.herokuapp.com/vehicle_histories`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -140,7 +145,7 @@ function App() {
   }
 
   function handleElectricitySaveData(electricity) {
-    fetch(`/electricity_histories`, {
+    fetch(`https://enigmatic-reef-41104.herokuapp.com/electricity_histories`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
