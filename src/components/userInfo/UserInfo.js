@@ -45,34 +45,44 @@ function UserInfo({
     <div className="user-info">
       <div className="user-card-container">
         <div className="user-card">
-          <br />
-          <img src={user.image} alt="user" className="user-image" />
-          <p>
-            <strong>First Name:</strong> {user.first_name}
-          </p>
-          <p>
-            <strong>Last Name:</strong> {user.last_name}
-          </p>
-          <p>
-            <strong>Email:</strong> {user.email}
-          </p>
-          <p>
-            <strong>Username:</strong> {user.username}
-          </p>
-          <br />
-          <button onClick={() => setHideNewForm(!hideNewForm)}>
-            Edit Info
-          </button>
-          <EditUserPopup
-            hideNewForm={hideNewForm}
-            user={user}
-            setUser={setUser}
-            setHideNewForm={setHideNewForm}
-          />
-          <GrayColor
-            setHideNewForm={setHideNewForm}
-            hideNewForm={hideNewForm}
-          />
+          {hideNewForm ? (
+            <>
+              <br />
+              <img src={user.image} alt="user" className="user-image" />
+              <p>
+                <strong>First Name:</strong> {user.first_name}
+              </p>
+              <p>
+                <strong>Last Name:</strong> {user.last_name}
+              </p>
+              <p>
+                <strong>Email:</strong> {user.email}
+              </p>
+              <p>
+                <strong>Username:</strong> {user.username}
+              </p>
+              <br />
+              <button
+                onClick={() => setHideNewForm(!hideNewForm)}
+                className="submit-button"
+              >
+                Edit Info
+              </button>
+            </>
+          ) : (
+            <>
+              <EditUserPopup
+                hideNewForm={hideNewForm}
+                user={user}
+                setUser={setUser}
+                setHideNewForm={setHideNewForm}
+              />
+              <GrayColor
+                setHideNewForm={setHideNewForm}
+                hideNewForm={hideNewForm}
+              />
+            </>
+          )}
         </div>
         <div className="carbon-emission-container">
           <div className="carbon-total">

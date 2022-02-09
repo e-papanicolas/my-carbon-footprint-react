@@ -10,6 +10,7 @@ function NavBar({ handleLogOut }) {
     backgrounColor: "black",
     fontWeight: "bold",
     textDecoration: "none",
+    cursor: "pointer",
   };
 
   return (
@@ -49,9 +50,13 @@ function NavBar({ handleLogOut }) {
             </NavLink>
           </li>
           <li>
-            <button onClick={handleLogOut}>
+            <p
+              onClick={handleLogOut}
+              style={linkStyle}
+              className="log-out-button"
+            >
               Log Out
-            </button>
+            </p>
           </li>
         </ul>
       </div>

@@ -15,14 +15,11 @@ const EditUserPopup = ({ hideNewForm, user, setUser, setHideNewForm }) => {
 
   const editSubmitHandler = (e) => {
     e.preventDefault();
-    fetch(
-      `/users/${user.id}`,
-      {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userInfo),
-      }
-    )
+    fetch(`/users/${user.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(userInfo),
+    })
       .then((r) => r.json())
       .then((userData) => {
         setUser(userData);
@@ -78,6 +75,14 @@ const EditUserPopup = ({ hideNewForm, user, setUser, setHideNewForm }) => {
           onClick={() => setHideNewForm(true)}
         />
       </form>
+      <button
+        onClick={() => {
+          setHideNewForm(!hideNewForm);
+        }}
+        className="submit-button"
+      >
+        Cancel
+      </button>
     </div>
   );
 };
