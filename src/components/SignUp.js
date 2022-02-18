@@ -2,7 +2,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -57,7 +56,6 @@ export default function SignUp({ setCurrentUser }) {
 
   function handleSubmit(e) {
       e.preventDefault();
-      console.log(signUpData);
 
       fetch("https://enigmatic-reef-41104.herokuapp.com/users", {
         method: "POST",
