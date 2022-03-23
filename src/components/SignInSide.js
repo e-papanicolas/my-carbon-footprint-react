@@ -1,35 +1,43 @@
-import { useState } from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import { TextField } from '@mui/material';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState } from "react";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import { TextField } from "@mui/material";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import Link from "@mui/material/Link";
+import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Typography from "@mui/material/Typography";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import backgroundImg from "./../images/background.png";
 
 import { NavLink } from "react-router-dom";
 
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {"Copyright © "}
       <Link color="inherit" href="https://elenipapanicolas.com">
-         Eleni Papanicolas 
-      </Link>{', '}
+        Eleni Papanicolas
+      </Link>
+      {", "}
       <Link color="inherit" href="https://katherineroll.com">
         Katherine Roll
-      </Link>{', '}
+      </Link>
+      {", "}
       <Link color="inherit" href="https://hung-le-swe.netlify.app">
         Hung Le
-      </Link>{' '}
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
@@ -37,44 +45,50 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignInSide({ onSignin, setSignUp }) {
-    const [signInData, setSignIndata] = useState({
-        username: "",
-        password: ""
+  const [signInData, setSignIndata] = useState({
+    username: "",
+    password: "",
+  });
+  const [error, setError] = useState({});
+
+  function handleSignInChange(e) {
+    setSignIndata({
+      ...signInData,
+      [e.target.name]: e.target.value,
     });
-    const [error, setError] = useState({});
+  }
 
-    function handleSignInChange(e) {
-        setSignIndata({
-            ...signInData,
-            [e.target.name]: e.target.value
-        })
-    }
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        fetch("https://enigmatic-reef-41104.herokuapp.com/signin", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(signInData)
-        })
-        .then(resp => {
-            if(resp.ok){
-                resp.json().then(data => {
-                  onSignin(data.user);
-                  localStorage.setItem("userId", data.session);
-                })
-            }
-            else {
-                resp.json().then(error => setError(error))
-            }
-        })
-    }
-
-
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch("https://enigmatic-reef-41104.herokuapp.com/signin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(signInData),
+    }).then((resp) => {
+      if (resp.ok) {
+        resp.json().then((data) => {
+          onSignin(data.user);
+          localStorage.setItem("userId", data.session);
+        });
+      } else {
+        resp.json().then((error) => setError(error));
+      }
+    });
+  }
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
+      <h1 className="login-title">
+        My <br />
+        Carbon <br />
+        Footprint
+      </h1>
+      <Grid
+        container
+        component="main"
+        sx={{ height: "100vh" }}
+        className="login-bg"
+      >
         <CssBaseline />
         <Grid
           item
@@ -82,12 +96,14 @@ export default function SignInSide({ onSignin, setSignUp }) {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1508924445640-6ab6b79bce04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60)',
+            // backgroundImage: { backgroundImg },
             //backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            // backgroundColor: (t) =>
+            //   t.palette.mode === "light"
+            //     ? t.palette.grey[50]
+            //     : t.palette.grey[900],
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
@@ -95,18 +111,23 @@ export default function SignInSide({ onSignin, setSignUp }) {
             sx={{
               my: 8,
               mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <Box
+              component="form"
+              noValidate
+              onSubmit={handleSubmit}
+              sx={{ mt: 1 }}
+            >
               <TextField
                 margin="normal"
                 required
