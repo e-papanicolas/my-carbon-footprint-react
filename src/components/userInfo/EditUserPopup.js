@@ -5,7 +5,7 @@ const EditUserPopup = ({ hideNewForm, user, setUser, setHideNewForm }) => {
     first_name: user.first_name,
     last_name: user.last_name,
     password: user.password,
-    email: user.email,
+    username: user.username,
     image: user.image,
   });
 
@@ -55,11 +55,11 @@ const EditUserPopup = ({ hideNewForm, user, setUser, setHideNewForm }) => {
           placeholder="New Password"
           onChange={inputHandler}
         />
-        <label htmlFor="email">Email: </label>
+        <label htmlFor="email">Username: </label>
         <input
           type="text"
-          name="email "
-          placeholder="New Email"
+          name="username"
+          placeholder="New Username"
           onChange={inputHandler}
         />
         <label htmlFor="image">Profile Picture: </label>

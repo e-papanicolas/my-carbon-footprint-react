@@ -98,7 +98,6 @@ function Estimate({
   }
 
   function handleVehicleFormSubmit(vehicleFormData) {
-    console.log(vehicleFormData);
     fetch("https://www.carboninterface.com/api/v1/estimates", {
       method: "POST",
 
@@ -116,8 +115,6 @@ function Estimate({
     })
       .then((resp) => resp.json())
       .then((vehicleData) => {
-        console.log(vehicleData);
-
         setVehicleResults({
           date: vehicleData.data.attributes.estimated_at,
           distance_value: vehicleData.data.attributes.distance_value,
@@ -166,12 +163,10 @@ function Estimate({
   function handleElectricityFormSubmit(elecrticityData) {
     fetch("https://www.carboninterface.com/api/v1/estimates", {
       method: "POST",
-
       headers: {
         Authorization: `Bearer 55NshTJnqIgD0wWtt246eg`,
         "Content-Type": "application/json",
       },
-
       body: JSON.stringify({
         type: "electricity",
         electricity_unit: "kwh",

@@ -11,6 +11,7 @@ function UserInfo({
   shippingHistory,
   vehicleHistory,
 }) {
+  console.log(user);
   const [hideNewForm, setHideNewForm] = useState(true);
 
   const totalFlightCarbon = flightHistory.reduce(
@@ -54,9 +55,6 @@ function UserInfo({
               </p>
               <p>
                 <strong>Last Name:</strong> {user.last_name}
-              </p>
-              <p>
-                <strong>Email:</strong> {user.email}
               </p>
               <p>
                 <strong>Username:</strong> {user.username}

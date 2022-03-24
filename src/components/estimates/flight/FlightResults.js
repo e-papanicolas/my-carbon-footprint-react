@@ -6,7 +6,7 @@ function FlightResults({ flightData, onSaveFlightData, setFlightResults }) {
       <h2>Carbon Estimate:</h2>
 
       <h4>Date: </h4>
-      <p>{flightData.date}</p>
+      <p>{flightData.date.slice(0, 10)}</p>
 
       <h4>Departure:</h4>
       <p>{flightData.departure}</p>

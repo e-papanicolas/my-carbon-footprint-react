@@ -1,141 +1,143 @@
 .about-container {
-    padding-top: 110px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  
-  .user-page-container > div {
-    font-weight: bold;
-    margin-left: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: column;
-  }
-  
-  .about-card {
-    margin: 20px;
-    margin-bottom: 50px;
-    padding: 10px 50px;
-    height: 200px;
-    width: 80%;
-    background-color: #6bad6f;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .developer-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .developer-card {
-    display: flex;
-    height: 150px;
-    justify-content: center;
-    margin: 20px;
-  }
-  
-  .info-card {
-    background-color: #98d3aa;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin-left: 20px;
-    padding-top: 10px;
-    border-radius: 10px;
-    width: 70%;
-    padding: 40px 40px 20px 40px;
-    padding-top: 120px;
-    border: 5px solid #b9e344;
-  }
-  
-  .dev-img {
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #b9e344;
-  }
-  
-  .creators-card {
-    display: flex;
-    justify-content: center;
-    width: 1500px;
-    max-width: 1500px;
-    margin-top: 140px;
-  }
-  
-  .developer-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .developer-card > img {
-    width: 200px;
-    height: 200px;
-    transform: translateY(100px);
-  }
-  
-  .developer-card > p {
-    overflow: scroll;
-  }
-  
-  .link {
-    color: black;
-  }
-  
-  .sns-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  
-  .sns-container span {
-    margin: 10px 10px 0px 10px;
-  }
-  
-  .more-info-card {
-    margin: 20px;
-    padding: 10px;
-    height: 310px;
-    width: 90%;
-    background-color: #4e944a;
-    box-shadow: 0 4px 8px 0 rgba(8, 4, 4, 0.2);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(310px);
-    color: white;
-  }
-  
-  .link-list {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  a:visited {
-    text-decoration: none;
-  }
-  
-  a:hover {
-    opacity: 50%;
-  }
-  
+  padding-top: 110px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.user-page-container > div {
+  font-weight: bold;
+  margin-left: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.about-card {
+  margin: 20px;
+  margin-bottom: 50px;
+  padding: 10px 50px;
+  height: 200px;
+  width: 80%;
+  background-color: #6bad6f;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.developer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.developer-card {
+  display: flex;
+  height: 150px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.info-card {
+  background-color: #98d3aa;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-left: 20px;
+  padding-top: 10px;
+  border-radius: 10px;
+  width: 70%;
+  padding: 40px 40px 20px 40px;
+  padding-top: 120px;
+  border: 5px solid #b9e344;
+}
+
+.dev-img {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #b9e344;
+}
+
+.creators-card {
+  display: flex;
+  justify-content: center;
+  width: 1500px;
+  max-width: 1500px;
+  margin-top: 140px;
+}
+
+.developer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.developer-card > img {
+  width: 200px;
+  height: 200px;
+  transform: translateY(100px);
+}
+
+.developer-card > p {
+  overflow: scroll;
+}
+
+.link {
+  color: black;
+}
+
+.sns-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sns-container span {
+  margin: 10px 10px 0px 10px;
+}
+
+.more-info-card {
+  margin: 20px;
+  padding: 10px;
+  height: 310px;
+  width: 90%;
+  background-color: #4e944a;
+  box-shadow: 0 4px 8px 0 rgba(8, 4, 4, 0.2);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(310px);
+  color: white;
+}
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  color: white;
+}
+
+.link-list a {
+  text-decoration: none;
+  color: white;
+}
+
+.link-list a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.link-list a:hover {
+  opacity: 50%;
+}
