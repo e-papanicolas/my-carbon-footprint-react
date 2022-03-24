@@ -1,14 +1,13 @@
-import './App.css';
-import { useState, useEffect } from "react"
-import { useNavigate, Route, Routes} from "react-router-dom";
+import "./App.css";
+import { useState, useEffect } from "react";
+import { useNavigate, Route, Routes } from "react-router-dom";
 
-import SignInSide from './components/SignInSide';
-import SignUp from './components/SignUp';
-import About from './components/About';
-import NavBar from './components/NavBar';
-import Estimate from './components/estimates/Estimate';
+import SignInSide from "./components/SignInSide";
+import SignUp from "./components/SignUp";
+import About from "./components/About";
+import NavBar from "./components/NavBar";
+import Estimate from "./components/estimates/Estimate";
 import UserInfo from "./components/userInfo/UserInfo";
-
 
 function App() {
   const navigate = useNavigate();
@@ -29,12 +28,11 @@ function App() {
     fetch("https://enigmatic-reef-41104.herokuapp.com/signout", {
       method: "DELETE",
     }).then(() => {
-      navigate("/")
-      setLoggedIn(false)
+      navigate("/");
+      setLoggedIn(false);
       localStorage.clear();
     });
   }
-
 
   useEffect(() => {
     fetch("https://enigmatic-reef-41104.herokuapp.com/me", {
@@ -45,22 +43,17 @@ function App() {
       if (response.ok) {
         response.json().then((user) => {
           setCurrentUser(user);
-          console.log(user);
-          setFlightHistory(user.flight_histories)
-          setVehicleHistory(user.vehicle_histories)
-          setElectricityHistory(user.electricity_histories)
-          setShippingHistory(user.shipping_histories)
+          setFlightHistory(user.flight_histories);
+          setVehicleHistory(user.vehicle_histories);
+          setElectricityHistory(user.electricity_histories);
+          setShippingHistory(user.shipping_histories);
           setLoggedIn(true);
         });
-      }
-      else {
-        response.json().then((error) => console.log(error))
+      } else {
+        response.json().then((error) => console.log(error));
       }
     });
   }, []);
-
-
-
 
   function handleDeleteData(location, item) {
     fetch(`https://enigmatic-reef-41104.herokuapp.com/${location}/${item.id}`, {
@@ -141,7 +134,9 @@ function App() {
       }),
     })
       .then((resp) => resp.json())
-      .then((data) => setVehicleHistory([...vehicleHistory, data]));
+      .then((data) => {
+        setVehicleHistory([...vehicleHistory, data]);
+      });
   }
 
   function handleElectricitySaveData(electricity) {
@@ -158,37 +153,34 @@ function App() {
       }),
     })
       .then((resp) => resp.json())
-      .then((data) => setElectricityHistory([...electricityHistory, data]));
+      .then((data) => {
+        setElectricityHistory([...electricityHistory, data]);
+      });
   }
 
-
-
-
-  if(loggedIn === false) {
+  if (loggedIn === false) {
     return (
       <div>
         <Routes>
-          <Route 
-            path="/signup" 
-            element={<SignUp setCurrentUser={setCurrentUser}/>}
+          <Route
+            path="/signup"
+            element={<SignUp setCurrentUser={setCurrentUser} />}
           />
 
-          <Route 
-            exact path="/"
-            element={<SignInSide onSignin={handleSignin}/>}
+          <Route
+            exact
+            path="/"
+            element={<SignInSide onSignin={handleSignin} />}
           />
         </Routes>
       </div>
-    )
+    );
   }
 
   return (
     <div className="App">
       <div className="background"></div>
-      <NavBar
-        handleLogOut={handleLogOut}
-        user={currentUser}
-      />
+      <NavBar handleLogOut={handleLogOut} user={currentUser} />
       <Routes>
         <Route path="/about" element={<About />} />
         <Route
@@ -240,10 +232,9 @@ function App() {
             />
           )}
         /> */}
-      </Routes> 
+      </Routes>
     </div>
   );
-
 }
 
 export default App;

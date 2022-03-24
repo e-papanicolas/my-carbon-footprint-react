@@ -21,7 +21,7 @@ function About() {
             The data that powers the API is sourced from governments,
             non-profits, and leading researchers around the world including the{" "}
             <strong>EPA </strong>
-            <strong>GHG Protocol </strong> and
+            <strong>GHG Protocol </strong> and{" "}
             <strong>Environment Canada</strong>. The app is designed to create
             awareness by powering carbon measurement to combat climate change.
           </p>
