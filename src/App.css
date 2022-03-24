@@ -52,3 +52,17 @@
 .footer-container small {
   color: white;
 }
+
+.login-bg {
+  background-image: url(./images/background.png);
+}
+
+.login-title {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-family: "Reenie Beanie", cursive;
+  font-size: 10rem;
+  line-height: 10rem;
+  color: white;
+}

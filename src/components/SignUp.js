@@ -1,36 +1,41 @@
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import Link from "@mui/material/Link";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
-
-
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {"Copyright © "}
       <Link color="inherit" href="https://elenipapanicolas.com">
-         Eleni Papanicolas 
-      </Link>{', '}
+        Eleni Papanicolas
+      </Link>
+      {", "}
       <Link color="inherit" href="http://katherineroll.com">
         Katherine Roll
-      </Link>{', '}
+      </Link>
+      {", "}
       <Link color="inherit" href="https://hung-le-swe.netlify.app">
         Hung Le
-      </Link>{' '}
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
@@ -38,35 +43,35 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp({ setCurrentUser }) {
-    const navigate = useNavigate();
-    const [signUpData, setSignUpData] = useState({
-        first_name: "",
-        last_name: "",
-        username: "",
-        password: "",
-        admin: 0
-    })
+  const navigate = useNavigate();
+  const [signUpData, setSignUpData] = useState({
+    first_name: "",
+    last_name: "",
+    username: "",
+    password: "",
+    admin: 0,
+  });
 
- function handleSignUpFormChange(e) {
+  function handleSignUpFormChange(e) {
     setSignUpData({
-        ...signUpData,
-        [e.target.name]: e.target.value
-    })
-  };
+      ...signUpData,
+      [e.target.name]: e.target.value,
+    });
+  }
 
   function handleSubmit(e) {
-      e.preventDefault();
+    e.preventDefault();
 
-      fetch("https://enigmatic-reef-41104.herokuapp.com/users", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(signUpData)
-      })
+    fetch("https://enigmatic-reef-41104.herokuapp.com/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(signUpData),
+    })
       .then((resp) => resp.json())
-      .then(user => {
-        setCurrentUser(user)
-        navigate("/")
-      })
+      .then((user) => {
+        setCurrentUser(user);
+        navigate("/");
+      });
   }
 
   return (
@@ -76,18 +81,23 @@ export default function SignUp({ setCurrentUser }) {
         <Box
           sx={{
             marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: "#4e944a" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box
+            component="form"
+            noValidate
+            onSubmit={handleSubmit}
+            sx={{ mt: 3 }}
+          >
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -135,7 +145,6 @@ export default function SignUp({ setCurrentUser }) {
                   onChange={handleSignUpFormChange}
                 />
               </Grid>
-              
             </Grid>
             <Button
               type="submit"
